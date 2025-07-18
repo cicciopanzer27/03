@@ -1,0 +1,24 @@
+{
+  "models": {
+    "mathematical": "llama3.2:3b",
+    "physical": "mistral:7b",
+    "neural": "llama3.2:3b", 
+    "empirical": "llama3.2:1b",
+    "critical": "mistral:7b",
+    "synthesis": "llama3.2:3b"
+  },
+  "research_parameters": {
+    "confidence_threshold": 0.7,
+    "max_iterations": 5,
+    "timeout_minutes": 10,
+    "parallel_processing": false,
+    "memory_optimization": true
+  },
+  "output_settings": {
+    "generate_pdf": false,
+    "include_raw_data": true,
+    "scientific_format": true,
+    "clinical_applications": true
+  }
+}
+
