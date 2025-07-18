@@ -217,3 +217,58 @@ MIT License - See LICENSE file for details
 
 **Disclaimer**: Questo sistema è per ricerca scientifica. Tutti i risultati devono essere validati attraverso peer review e sperimentazione empirica prima dell'applicazione clinica.
 
+## Esempi di utilizzo avanzato
+
+### Parsing delle risposte Ollama
+
+```python
+from src.mia_consciousness.core import CoreResearchAgent
+
+response = """
+LIMITATIONS:
+- Small sample size: The study included only 10 subjects.
+- Potential bias: Selection criteria may have introduced bias.
+"""
+agent = CoreResearchAgent()
+issues = agent._parse_critical_issues(response)
+print(issues)
+# Output: [{'title': 'Small sample size', 'description': 'Small sample size: The study included only 10 subjects.'}, ...]
+```
+
+### Generazione di output scientifico
+
+```python
+from src.mia_consciousness.output import OutputGenerator
+
+generator = OutputGenerator()
+results = {
+    'summary': {
+        'abstract': 'Sintesi della ricerca...',
+        'discussion': 'Discussione dei risultati...',
+        'limitations': 'Limite principale: ...',
+        'conclusion': 'Conclusione finale.'
+    },
+    'protocol': {
+        'methodology': ['Step 1', 'Step 2']
+    },
+    'domain_results': {
+        'mathematical': {'findings': 'Risultati matematici', 'limitations': 'Limiti matematici'}
+    }
+}
+md = generator._format_results_for_paper(results)
+print(md)
+```
+
+## Troubleshooting
+
+- **Errore: "Ollama not found"**
+  - Soluzione: Verifica che Ollama sia installato e accessibile dal terminale. Usa `ollama --version`.
+- **Timeout scaduto nella chiamata a Ollama**
+  - Soluzione: Aumenta il parametro `timeout` nella chiamata, verifica che il modello sia scaricato e funzionante.
+- **Risposta vuota o None dal modello**
+  - Soluzione: Controlla che il prompt sia ben formato e che il modello supporti il tipo di richiesta.
+- **Problemi di import o path**
+  - Soluzione: Assicurati di eseguire gli script dalla root del progetto o aggiungi `src` al PYTHONPATH.
+
+Per altri problemi consulta la documentazione ufficiale o apri una issue su GitHub.
+
