@@ -1,0 +1,4 @@
+- Iter 0: Traduzione -> lim_{x->0} (1-cos(x))/x^2
+- Iter 0: Ottimizzazione -> (1-cos(x))/x^2 lim_{x->0}
+- Iter 0: Ricerca Google (sintesi) -> Google CLI non trovato....
+- Iter 0: Convergenza -> True

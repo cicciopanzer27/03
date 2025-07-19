@@ -1,0 +1,124 @@
+# Continuazione Collatz da n=1276
+
+- Iter 0: CollatzAgent -> n = 1276 -> n_next = 638
+- Iter 0: Ricerca avanzata -> Google CLI non trovato....
+- Iter 0: Convergenza=False, Pattern=False
+- Iter 1: CollatzAgent -> n = 638 -> n_next = 319
+- Iter 1: Convergenza=False, Pattern=False
+- Iter 2: CollatzAgent -> n = 319 -> n_next = 958
+- Iter 2: Convergenza=False, Pattern=False
+- Iter 3: CollatzAgent -> n = 958 -> n_next = 479
+- Iter 3: Convergenza=False, Pattern=False
+- Iter 4: CollatzAgent -> n = 479 -> n_next = 1438
+- Iter 4: Convergenza=False, Pattern=False
+- Iter 5: CollatzAgent -> n = 1438 -> n_next = 719
+- Iter 5: Convergenza=False, Pattern=False
+- Iter 6: CollatzAgent -> n = 719 -> n_next = 2158
+- Iter 6: Convergenza=False, Pattern=False
+- Iter 7: CollatzAgent -> n = 2158 -> n_next = 1079
+- Iter 7: Convergenza=False, Pattern=False
+- Iter 8: CollatzAgent -> n = 1079 -> n_next = 3238
+- Iter 8: Convergenza=False, Pattern=False
+- Iter 9: CollatzAgent -> n = 3238 -> n_next = 1619
+- Iter 9: Convergenza=False, Pattern=False
+- Iter 10: CollatzAgent -> n = 1619 -> n_next = 4858
+- Iter 10: Convergenza=False, Pattern=False
+- Iter 11: CollatzAgent -> n = 4858 -> n_next = 2429
+- Iter 11: Convergenza=False, Pattern=False
+- Iter 12: CollatzAgent -> n = 2429 -> n_next = 7288
+- Iter 12: Convergenza=False, Pattern=False
+- Iter 13: CollatzAgent -> n = 7288 -> n_next = 3644
+- Iter 13: Convergenza=False, Pattern=False
+- Iter 14: CollatzAgent -> n = 3644 -> n_next = 1822
+- Iter 14: Convergenza=False, Pattern=False
+- Iter 15: CollatzAgent -> n = 1822 -> n_next = 911
+- Iter 15: Convergenza=False, Pattern=False
+- Iter 16: CollatzAgent -> n = 911 -> n_next = 2734
+- Iter 16: Convergenza=False, Pattern=False
+- Iter 17: CollatzAgent -> n = 2734 -> n_next = 1367
+- Iter 17: Convergenza=False, Pattern=False
+- Iter 18: CollatzAgent -> n = 1367 -> n_next = 4102
+- Iter 18: Convergenza=False, Pattern=False
+- Iter 19: CollatzAgent -> n = 4102 -> n_next = 2051
+- Iter 19: Convergenza=False, Pattern=False
+- Iter 20: CollatzAgent -> n = 2051 -> n_next = 6154
+- Iter 20: Ricerca avanzata -> Google CLI non trovato....
+- Iter 20: Convergenza=False, Pattern=False
+- Iter 21: CollatzAgent -> n = 6154 -> n_next = 3077
+- Iter 21: Convergenza=False, Pattern=False
+- Iter 22: CollatzAgent -> n = 3077 -> n_next = 9232
+- Iter 22: Convergenza=False, Pattern=False
+- Iter 23: CollatzAgent -> n = 9232 -> n_next = 4616
+- Iter 23: Convergenza=False, Pattern=False
+- Iter 24: CollatzAgent -> n = 4616 -> n_next = 2308
+- Iter 24: Convergenza=False, Pattern=False
+- Iter 25: CollatzAgent -> n = 2308 -> n_next = 1154
+- Iter 25: Convergenza=False, Pattern=False
+- Iter 26: CollatzAgent -> n = 1154 -> n_next = 577
+- Iter 26: Convergenza=False, Pattern=False
+- Iter 27: CollatzAgent -> n = 577 -> n_next = 1732
+- Iter 27: Convergenza=False, Pattern=False
+- Iter 28: CollatzAgent -> n = 1732 -> n_next = 866
+- Iter 28: Convergenza=False, Pattern=False
+- Iter 29: CollatzAgent -> n = 866 -> n_next = 433
+- Iter 29: Convergenza=False, Pattern=False
+- Iter 30: CollatzAgent -> n = 433 -> n_next = 1300
+- Iter 30: Convergenza=False, Pattern=False
+- Iter 31: CollatzAgent -> n = 1300 -> n_next = 650
+- Iter 31: Convergenza=False, Pattern=False
+- Iter 32: CollatzAgent -> n = 650 -> n_next = 325
+- Iter 32: Convergenza=False, Pattern=False
+- Iter 33: CollatzAgent -> n = 325 -> n_next = 976
+- Iter 33: Convergenza=False, Pattern=False
+- Iter 34: CollatzAgent -> n = 976 -> n_next = 488
+- Iter 34: Convergenza=False, Pattern=False
+- Iter 35: CollatzAgent -> n = 488 -> n_next = 244
+- Iter 35: Convergenza=False, Pattern=False
+- Iter 36: CollatzAgent -> n = 244 -> n_next = 122
+- Iter 36: Convergenza=False, Pattern=False
+- Iter 37: CollatzAgent -> n = 122 -> n_next = 61
+- Iter 37: Convergenza=False, Pattern=False
+- Iter 38: CollatzAgent -> n = 61 -> n_next = 184
+- Iter 38: Convergenza=False, Pattern=False
+- Iter 39: CollatzAgent -> n = 184 -> n_next = 92
+- Iter 39: Convergenza=False, Pattern=False
+- Iter 40: CollatzAgent -> n = 92 -> n_next = 46
+- Iter 40: Ricerca avanzata -> Google CLI non trovato....
+- Iter 40: Convergenza=False, Pattern=False
+- Iter 41: CollatzAgent -> n = 46 -> n_next = 23
+- Iter 41: Convergenza=False, Pattern=False
+- Iter 42: CollatzAgent -> n = 23 -> n_next = 70
+- Iter 42: Convergenza=False, Pattern=False
+- Iter 43: CollatzAgent -> n = 70 -> n_next = 35
+- Iter 43: Convergenza=False, Pattern=False
+- Iter 44: CollatzAgent -> n = 35 -> n_next = 106
+- Iter 44: Convergenza=False, Pattern=False
+- Iter 45: CollatzAgent -> n = 106 -> n_next = 53
+- Iter 45: Convergenza=False, Pattern=False
+- Iter 46: CollatzAgent -> n = 53 -> n_next = 160
+- Iter 46: Convergenza=False, Pattern=False
+- Iter 47: CollatzAgent -> n = 160 -> n_next = 80
+- Iter 47: Convergenza=False, Pattern=False
+- Iter 48: CollatzAgent -> n = 80 -> n_next = 40
+- Iter 48: Convergenza=False, Pattern=False
+- Iter 49: CollatzAgent -> n = 40 -> n_next = 20
+- Iter 49: Convergenza=False, Pattern=False
+- Iter 50: CollatzAgent -> n = 20 -> n_next = 10
+- Iter 50: Convergenza=False, Pattern=False
+- Iter 51: CollatzAgent -> n = 10 -> n_next = 5
+- Iter 51: Convergenza=False, Pattern=False
+- Iter 52: CollatzAgent -> n = 5 -> n_next = 16
+- Iter 52: Convergenza=False, Pattern=False
+- Iter 53: CollatzAgent -> n = 16 -> n_next = 8
+- Iter 53: Convergenza=False, Pattern=False
+- Iter 54: CollatzAgent -> n = 8 -> n_next = 4
+- Iter 54: Convergenza=False, Pattern=False
+- Iter 55: CollatzAgent -> n = 4 -> n_next = 2
+- Iter 55: Convergenza=False, Pattern=False
+- Iter 56: CollatzAgent -> n = 2 -> n_next = 1
+- Iter 56: Convergenza=True, Pattern=True
+
+## Risultati
+- Convergenza: True
+- Pattern trovati: 0
+- Statistiche: {'even_count': 39, 'odd_count': 18, 'max_reached': 9232}
