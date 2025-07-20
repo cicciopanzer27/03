@@ -1,4 +1,5 @@
 from .symbolic_agents import SharedMemory, SymbolicTranslatorAgent, ComputationalOptimizerAgent, ConvergenceGuaranteeAgent, MetaLearningAgent, TransparencyAgent, SymbolicBenchmark
+from .symbolic_verifier_agent import SymbolicVerifierAgent
 
 class ResearchConfig:
     """Configurazione della ricerca (stub minimale)"""
@@ -32,15 +33,22 @@ class ConsciousnessResearcher:
             optimizer = ComputationalOptimizerAgent(memory, benchmark)
             convergence = ConvergenceGuaranteeAgent(memory, benchmark)
             meta = MetaLearningAgent(memory, benchmark)
+            verifier = SymbolicVerifierAgent(memory, benchmark)
             # Esempio avanzato: ottimizzazione simbolica di una funzione reale
             text = "minimize f(x) = x ^ 2 + 2 * x + 1 lim x->0"
             symbolic = translator.translate_to_symbolic(text)
             transparency.log_operation('SymbolicTranslatorAgent', 'translate_to_symbolic', text, symbolic, 'Traduzione simbolica', {'accuracy': 0.5})
+            verification_score_translation = verifier.verify('SymbolicTranslatorAgent', 'translate_to_symbolic', symbolic)
+            transparency.log_operation('SymbolicVerifierAgent', 'verify', symbolic, str(verification_score_translation), 'Verifica traduzione', {'verification_score': verification_score_translation})
+
             features = {'length': len(symbolic.split()), 'has_complex': 'lim' in symbolic or '^' in symbolic}
             params = meta.adapt_parameters(features)
             transparency.log_operation('MetaLearningAgent', 'adapt_parameters', str(features), str(params), 'Adattamento parametri', params)
             optimized = optimizer.optimize(symbolic)
             transparency.log_operation('ComputationalOptimizerAgent', 'optimize', symbolic, optimized, 'Ottimizzazione simbolica', {'efficiency': 0.0})
+            verification_score_optimization = verifier.verify('ComputationalOptimizerAgent', 'optimize', optimized)
+            transparency.log_operation('SymbolicVerifierAgent', 'verify', optimized, str(verification_score_optimization), 'Verifica ottimizzazione', {'verification_score': verification_score_optimization})
+
             is_converged = convergence.check_convergence(optimized)
             transparency.log_operation('ConvergenceGuaranteeAgent', 'check_convergence', optimized, str(is_converged), 'Verifica convergenza', {'converged': is_converged})
             memory.save_markdown("symbolic_protocol_memory.md")

@@ -102,7 +102,33 @@ class ComputationalOptimizerAgent:
             self.benchmark.start_timer()
         # Logica mock: semplifica doppie negazioni e ordina simboli
         optimized = expression.replace('¬ ¬', '').replace('  ', ' ').strip()
-        optimized = ' '.join(sorted(optimized.split()))
+        # Simplify redundant operations
+        tokens = optimized.split(' ')
+        # This is a naive implementation and will not work for complex cases
+
+        # First, simplify redundant expressions like "a ∧ a" to "a"
+        i = 0
+        while i < len(tokens) - 2:
+            if tokens[i] == tokens[i+2] and tokens[i+1] in ['∧', '∨']:
+                tokens.pop(i+1)
+                tokens.pop(i+1)
+            else:
+                i += 1
+
+        # Join and split to handle multiple spaces
+        optimized = ' '.join(tokens)
+        tokens = optimized.split(' ')
+
+        # Now, simplify expressions like "a ∨ a" to "a"
+        i = 0
+        while i < len(tokens) - 2:
+            if tokens[i] == tokens[i+2] and tokens[i+1] in ['∧', '∨']:
+                tokens.pop(i+1)
+                tokens.pop(i+1)
+            else:
+                i += 1
+
+        optimized = ' '.join(tokens)
         # Efficienza mock: % di simboli rimossi rispetto all'input
         input_len = len(expression.split())
         output_len = len(optimized.split())
@@ -225,7 +251,7 @@ class SymbolicBenchmark:
     def stop_timer(self):
         self._end = time.time()
         return self._end - self._start
-    def record(self, problem_type, converged, exec_time, performance, efficiency, translation_accuracy=None, notes=None):
+    def record(self, problem_type, converged, exec_time, performance, efficiency, translation_accuracy=None, verification_score=None, notes=None):
         self.results.append({
             'problem_type': problem_type,
             'converged': converged,
@@ -233,6 +259,7 @@ class SymbolicBenchmark:
             'performance': performance,
             'efficiency': efficiency,
             'translation_accuracy': translation_accuracy,
+            'verification_score': verification_score,
             'notes': notes
         })
     def summary(self):
@@ -243,11 +270,13 @@ class SymbolicBenchmark:
         avg_perf = sum(r['performance'] for r in self.results) / n
         avg_eff = sum(r['efficiency'] for r in self.results) / n
         conv_rate = sum(1 for r in self.results if r['converged']) / n
-        return f"Benchmarked {n} problems | Avg time: {avg_time:.4f}s | Avg perf: {avg_perf:.3f} | Avg eff: {avg_eff:.2%} | Convergence: {conv_rate:.0%}"
+        verification_scores = [r['verification_score'] for r in self.results if r['verification_score'] is not None]
+        avg_verification_score = sum(verification_scores) / len(verification_scores) if verification_scores else 'N/A'
+        return f"Benchmarked {n} problems | Avg time: {avg_time:.4f}s | Avg perf: {avg_perf:.3f} | Avg eff: {avg_eff:.2%} | Convergence: {conv_rate:.0%} | Avg Verification: {avg_verification_score}"
     def to_markdown(self):
         md = ["# Symbolic System Benchmark Report\n"]
         for r in self.results:
-            md.append(f"## {r['problem_type']}\n- Converged: {r['converged']}\n- Time: {r['exec_time']:.4f}s\n- Performance: {r['performance']:.3f}\n- Efficiency: {r['efficiency']:.2%}\n- Translation Accuracy: {r.get('translation_accuracy','N/A')}\n- Notes: {r.get('notes','')}\n---")
+            md.append(f"## {r['problem_type']}\n- Converged: {r['converged']}\n- Time: {r['exec_time']:.4f}s\n- Performance: {r['performance']:.3f}\n- Efficiency: {r['efficiency']:.2%}\n- Translation Accuracy: {r.get('translation_accuracy','N/A')}\n- Verification Score: {r.get('verification_score', 'N/A')}\n- Notes: {r.get('notes','')}\n---")
         md.append(self.summary())
         return '\n'.join(md)
     def save_markdown(self, filepath):
