@@ -189,263 +189,91 @@ python main.py --enhanced --use-mcp --use-a2a
 }
 ```
 
-### Variabili Ambiente (Opzionali)
+## Scientific Validation
 
-```bash
-# API Keys per servizi esterni
-export GOOGLE_API_KEY="your_key_here"
-export ARXIV_API_KEY="your_key_here"
+Il sistema implementa:
 
-# Configurazioni avanzate
-export MIA_LOG_LEVEL="INFO"
-export MIA_CACHE_DIR="./cache"
-export OLLAMA_HOST="http://localhost:11434"
+- **Peer-reviewed methodology**: Basato su letteratura scientifica validata
+- **Dialectical analysis**: Tesi-antitesi-sintesi per ogni finding
+- **Critical evaluation**: Analisi rigorosa di limitazioni e bias
+- **Reproducible protocols**: Metodologie standardizzate e riproducibili
+- **Conservative confidence**: Assessment conservativo delle evidenze
+
+## Research Domains
+
+### 1. Mathematical Modeling
+- Information theory applications
+- Network analysis metrics
+- Statistical validation
+- Computational tractability
+
+### 2. Physical Mechanisms
+- Thermodynamic analysis
+- Energy efficiency assessment
+- Quantum vs classical evaluation
+- Scaling laws derivation
+
+### 3. Neural Correlates
+- NCCs identification and validation
+- Network connectivity analysis
+- Brain imaging evidence review
+- Neural circuit modeling
+
+### 4. Empirical Validation
+- Experimental design protocols
+- Statistical analysis plans
+- Replication requirements
+- Clinical validation studies
+
+### 5. Critical Analysis
+- Methodological flaw identification
+- Logical consistency evaluation
+- Bias assessment and mitigation
+- Alternative explanation consideration
+
+### 6. Synthesis Integration
+- Cross-domain integration
+- Contradiction resolution
+- Unified framework development
+- Clinical application derivation
+
+## Quality Assurance
+
+- **Evidence Levels**: A (Proven) → D (Speculative)
+- **Confidence Scoring**: 0-100% with justification
+- **Replication Assessment**: Success rate tracking
+- **Clinical Utility**: Practical application evaluation
+
+## Contributing
+
+1. Fork the repository
+2. Create feature branch
+3. Add tests for new functionality
+4. Ensure scientific rigor
+5. Submit pull request
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Citation
+
+```bibtex
+@software{mia_consciousness_2025,
+  title={M.I.A. Consciousness Research System},
+  author={Multi-Agent Intelligence Architecture Team},
+  year={2025},
+  url={https://github.com/your-repo/mia-consciousness}
+}
 ```
 
-## 🏗 Architettura
+## Support
 
-### Struttura del Progetto
-
-```
-mia-consciousness-system/
-├── src/mia_consciousness/          # Core del sistema
-│   ├── research.py                 # Ricerca multi-agente
-│   ├── output.py                   # Generazione output
-│   ├── vector_database.py          # Database vettoriali
-│   ├── advanced_webscraper.py      # Web scraping
-│   ├── mcp_integration.py          # MCP protocol
-│   └── a2a_integration.py          # A2A protocol
-├── tests/                          # Test suite completa
-├── output/                         # Output delle ricerche
-├── data/                          # Dati e cache
-├── config.json                    # Configurazione principale
-├── main.py                        # Entry point
-└── setup_mia_complete.py         # Setup automatico
-```
-
-### Componenti Principali
-
-1. **ConsciousnessResearcher**: Core engine per ricerca multi-agente
-2. **MCPIntegration**: Accesso a database esterni tramite MCP
-3. **A2AIntegration**: Coordinazione agenti tramite A2A protocol
-4. **VectorDatabase**: Ricerca semantica e gestione documenti
-5. **OutputGenerator**: Formattazione output scientifici
-
-## 📚 Esempi
-
-### Ricerca Base
-
-```python
-from mia_consciousness import ConsciousnessResearcher, ResearchConfig
-
-config = ResearchConfig(
-    models={"mathematical": "llama3.2:3b"},
-    parameters={"confidence_threshold": 0.8}
-)
-
-researcher = ConsciousnessResearcher(config)
-results = researcher.execute_protocol("neural_correlates")
-```
-
-### Pipeline Avanzata con MCP
-
-```python
-import asyncio
-from mia_consciousness import MCPManager, create_a2a_integration
-
-async def advanced_research():
-    # Setup MCP per accesso dati esterni
-    async with MCPManager() as (mcp, connections):
-        # Ricerca papers automatica
-        papers = await mcp.search_consciousness_papers(
-            "neural correlates of consciousness", 
-            max_results=20
-        )
-        
-        # Setup A2A per analisi multi-agente
-        a2a = create_a2a_integration()
-        workflow = a2a.create_consciousness_research_workflow(
-            "enhanced consciousness research"
-        )
-        
-        # Esecuzione workflow integrato
-        result = await a2a.execute_workflow(workflow.id)
-        return result
-
-# Esecuzione
-asyncio.run(advanced_research())
-```
-
-### Analisi con Database Vettoriali
-
-```python
-from mia_consciousness import create_vector_database
-
-# Setup database
-vector_db = create_vector_database(
-    backend="chromadb",
-    model_name="all-MiniLM-L6-v2"
-)
-
-# Aggiungi documenti
-papers = ["Document 1 content...", "Document 2 content..."]
-vector_db.add_documents(papers)
-
-# Ricerca semantica
-results = vector_db.search(
-    "What are the neural correlates of consciousness?",
-    n_results=5
-)
-```
-
-## 🧪 Test
-
-### Test Suite Completa
-
-```bash
-# Test base
-python test_everything_mia.py
-
-# Test avanzati
-python test_complete_mia_system.py
-
-# Test PyTest
-pytest tests/ -v
-
-# Test specifici
-pytest tests/test_mcp_a2a_integration.py -v
-```
-
-### Test di Diagnostica
-
-```bash
-# Verifica sistema
-python -c "from tests.test_mcp_a2a_integration import run_integration_diagnostics; run_integration_diagnostics()"
-
-# Health check
-python main.py --verify-setup --verbose
-```
-
-## 🤝 Contribuire
-
-### Setup Sviluppo
-
-```bash
-# Fork del repository
-git clone https://github.com/yourusername/mia-consciousness-system.git
-cd mia-consciousness-system
-
-# Setup ambiente dev
-pip install -r requirements-dev.txt
-pre-commit install
-
-# Esegui test
-pytest tests/ -v
-```
-
-### Guidelines
-
-1. **Codice**: Segui PEP 8, usa type hints
-2. **Test**: Aggiungi test per nuove funzionalità
-3. **Documentazione**: Aggiorna README per nuove features
-4. **Commit**: Usa conventional commits (`feat:`, `fix:`, `docs:`)
-
-### Aree di Contribuzione
-
-- 🧠 Nuovi protocolli di ricerca
-- 🔌 Integrazioni con database scientifici
-- 📊 Miglioramenti algoritmi di analisi
-- 🌐 Estensioni web scraping
-- 📱 Interfacce user-friendly
-- 🚀 Ottimizzazioni performance
-
-## 🗺 Roadmap
-
-### ✅ Versione 2.0 (Attuale)
-- Core multi-agent research ✅
-- MCP integration framework ✅
-- A2A protocol implementation ✅
-- Vector databases ✅
-- Advanced web scraping ✅
-
-### 🚧 Versione 2.1 (Q2 2024)
-- [ ] GUI Web interface
-- [ ] Real-time collaboration features
-- [ ] Advanced visualization tools
-- [ ] Mobile app companion
-- [ ] Cloud deployment options
-
-### 🔮 Versione 3.0 (Future)
-- [ ] Quantum consciousness models
-- [ ] Brain-computer interface integration
-- [ ] AI-generated hypothesis testing
-- [ ] Federated learning capabilities
-- [ ] Advanced explanation systems
-
-## 📊 Metriche e Performance
-
-### Benchmark Tipici (ASUS TUF A15)
-- **Ricerca Base**: 2-5 minuti
-- **Analisi Completa**: 10-30 minuti  
-- **Pipeline MCP+A2A**: 15-45 minuti
-- **Memory Usage**: 2-8GB RAM
-- **Storage**: 1-5GB per progetto
-
-### Scalabilità
-- **Papers Processati**: 1000+ documenti
-- **Concurrent Workflows**: 5+ simultanei
-- **Database Size**: 10GB+ vector embeddings
-- **Uptime**: 24/7 production ready
-
-## 🔒 Sicurezza e Privacy
-
-- **Local AI Models**: Tutti i modelli girano localmente
-- **No Data Sharing**: Nessun invio dati a servizi esterni
-- **Tor Support**: Anonimato per web scraping
-- **Encryption**: Dati sensibili crittografati
-- **Audit Logs**: Tracciamento completo operazioni
-
-## 📞 Supporto
-
-### Documentazione
-- **Wiki**: [Link al wiki del progetto]
-- **API Docs**: Generata automaticamente con Sphinx
-- **Tutorials**: Video e guide passo-passo
-
-### Community
-- **GitHub Issues**: Bug reports e feature requests
-- **Discussions**: Q&A e discussioni generali
-- **Discord**: Chat in tempo reale [Link server]
-
-### Commercial Support
-Per supporto enterprise, training personalizzato, o consultazioni:
-- 📧 Email: support@mia-consciousness.com
-- 🌐 Website: https://mia-consciousness.com
-
-## 📄 Licenza
-
-Questo progetto è sotto licenza MIT. Vedi [LICENSE](LICENSE) per dettagli.
-
-## 🙏 Riconoscimenti
-
-### Ricercatori e Teorie
-- **Giulio Tononi**: Integrated Information Theory (IIT)
-- **Bernard Baars**: Global Workspace Theory (GWT)
-- **Roger Penrose & Stuart Hameroff**: Orchestrated Objective Reduction
-- **Christof Koch**: Neural Correlates of Consciousness
-
-### Tecnologie
-- **Ollama**: Local AI model management
-- **ChromaDB**: Vector database solution
-- **Anthropic**: MCP protocol development
-- **Community**: A2A protocol contributors
-
-### Beta Testers
-Grazie a tutti i ricercatori che hanno testato M.I.A. e fornito feedback prezioso.
+- 📧 Email: support@mia-consciousness.org
+- 📖 Documentation: https://docs.mia-consciousness.org
+- 🐛 Issues: https://github.com/your-repo/mia-consciousness/issues
 
 ---
 
-**M.I.A. Consciousness Research System** - *Advancing consciousness science through AI*
+**Disclaimer**: Questo sistema è per ricerca scientifica. Tutti i risultati devono essere validati attraverso peer review e sperimentazione empirica prima dell'applicazione clinica.
 
-[![Star on GitHub](https://img.shields.io/github/stars/yourusername/mia-consciousness-system?style=social)](https://github.com/yourusername/mia-consciousness-system)
-[![Follow on GitHub](https://img.shields.io/github/followers/yourusername?style=social)](https://github.com/yourusername)

@@ -1,4 +1,4 @@
-# CURSOR PROMPT - M.I.A. Consciousness Research System
+# ai PROMPT - M.I.A. Consciousness Research System
 
 ## OBIETTIVO
 Implementare e completare il sistema M.I.A. (Multi-Agent Intelligence Architecture) per ricerca rigorosa sulla coscienza usando Ollama locale, dalla creazione del server fino alla risposta finale.

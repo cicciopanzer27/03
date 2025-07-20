@@ -6,10 +6,11 @@ class OutputGenerator:
     Generazione e formattazione degli output scientifici e clinici.
     Fornisce metodi per produrre sezioni di report, estrarre applicazioni cliniche, rischi, validazioni e conclusioni.
     """
+    
     def __init__(self, output_settings=None):
         self.output_settings = output_settings or {}
 
-    def _format_results_for_paper(self, results: Dict[str, Any]) -> str:
+    def _format_results_for_paper(self, results: Dict[str, Any]) -> str:      
         """
         Formatta i risultati per un paper scientifico in markdown.
         Args:
@@ -20,15 +21,15 @@ class OutputGenerator:
         abstract = results.get('summary', {}).get('abstract', 'N/A')
         methods = results.get('protocol', {}).get('methodology', [])
         findings = results.get('domain_results', {})
-        discussion = results.get('summary', {}).get('discussion', 'N/A')
-        conclusion = results.get('summary', {}).get('conclusion', 'N/A')
+        discussion = results.get('summary', {}).get('discussion', 'N/A')      
+        conclusion = results.get('summary', {}).get('conclusion', 'N/A')      
 
         md = [
             '# Risultati della Ricerca',
             '## Abstract',
             abstract,
             '## Metodi',
-            '\n'.join(f'- {m}' for m in methods) if methods else 'N/A',
+            '\n'.join(f'- {m}' for m in methods) if methods else 'N/A',       
             '## Risultati',
         ]
         # Sezioni per ogni dominio
@@ -43,7 +44,7 @@ class OutputGenerator:
         ]
         return '\n\n'.join(md)
 
-    def _format_discussion_for_paper(self, results: Dict[str, Any]) -> str:
+    def _format_discussion_for_paper(self, results: Dict[str, Any]) -> str:   
         """
         Formatta la discussione per un paper scientifico, includendo limiti e prospettive future.
         Args:
@@ -52,8 +53,8 @@ class OutputGenerator:
             str: Testo markdown della discussione.
         """
         discussion = results.get('summary', {}).get('discussion', '')
-        limitations = results.get('summary', {}).get('limitations', '')
-        future = results.get('summary', {}).get('future_directions', '')
+        limitations = results.get('summary', {}).get('limitations', '')       
+        future = results.get('summary', {}).get('future_directions', '')      
         md = [
             '## Discussione',
             discussion or 'N/A',
@@ -64,7 +65,7 @@ class OutputGenerator:
         ]
         return '\n\n'.join(md)
 
-    def _format_limitations_for_paper(self, results: Dict[str, Any]) -> str:
+    def _format_limitations_for_paper(self, results: Dict[str, Any]) -> str:  
         """
         Formatta la sezione limitazioni per un paper scientifico.
         Args:
@@ -72,14 +73,14 @@ class OutputGenerator:
         Returns:
             str: Testo markdown delle limitazioni.
         """
-        limitations = results.get('summary', {}).get('limitations', '')
+        limitations = results.get('summary', {}).get('limitations', '')       
         if not limitations:
             # Prova a estrarre da domain_results
             domain_limits = []
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 lim = data.get('limitations')
                 if lim:
-                    domain_limits.append(f"**{domain.capitalize()}**: {lim}")
+                    domain_limits.append(f"**{domain.capitalize()}**: {lim}") 
             if domain_limits:
                 limitations = '\n'.join(domain_limits)
             else:
@@ -108,7 +109,7 @@ class OutputGenerator:
             apps = summary_apps
         # Fallback: cerca nei domain_results
         if not apps:
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 domain_apps = data.get('clinical_applications', {})
                 if isinstance(domain_apps, dict):
                     apps += domain_apps.get(category, [])
@@ -124,9 +125,9 @@ class OutputGenerator:
         Args:
             results (Dict[str, Any]): Dizionario con i risultati della ricerca.
         Returns:
-            str: Elenco markdown delle applicazioni cliniche immediate.
+            str: Elenco markdown delle applicazioni cliniche immediate.       
         """
-        return self._extract_clinical_applications(results, 'immediate')
+        return self._extract_clinical_applications(results, 'immediate')      
 
     def _extract_future_clinical_applications(self, results: Dict[str, Any]) -> str:
         """
@@ -146,15 +147,15 @@ class OutputGenerator:
         Returns:
             str: Elenco markdown dei requisiti di validazione.
         """
-        reqs = results.get('summary', {}).get('validation_requirements', '')
+        reqs = results.get('summary', {}).get('validation_requirements', '')  
         if not reqs:
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 dom_reqs = data.get('validation_requirements')
                 if dom_reqs:
                     reqs += f"- {dom_reqs}\n"
-        return reqs.strip() or 'Nessun requisito di validazione trovato.'
+        return reqs.strip() or 'Nessun requisito di validazione trovato.'     
 
-    def _extract_clinical_risks(self, results: Dict[str, Any]) -> str:
+    def _extract_clinical_risks(self, results: Dict[str, Any]) -> str:        
         """
         Estrae i rischi clinici.
         Args:
@@ -164,7 +165,7 @@ class OutputGenerator:
         """
         risks = results.get('summary', {}).get('clinical_risks', '')
         if not risks:
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 dom_risks = data.get('clinical_risks')
                 if dom_risks:
                     risks += f"- {dom_risks}\n"
@@ -178,15 +179,15 @@ class OutputGenerator:
         Returns:
             str: Elenco markdown delle considerazioni regolatorie.
         """
-        reg = results.get('summary', {}).get('regulatory_considerations', '')
+        reg = results.get('summary', {}).get('regulatory_considerations', '') 
         if not reg:
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 dom_reg = data.get('regulatory_considerations')
                 if dom_reg:
                     reg += f"- {dom_reg}\n"
-        return reg.strip() or 'Nessuna considerazione regolatoria trovata.'
+        return reg.strip() or 'Nessuna considerazione regolatoria trovata.'   
 
-    def _extract_clinical_conclusions(self, results: Dict[str, Any]) -> str:
+    def _extract_clinical_conclusions(self, results: Dict[str, Any]) -> str:  
         """
         Estrae le conclusioni cliniche.
         Args:
@@ -194,9 +195,9 @@ class OutputGenerator:
         Returns:
             str: Elenco markdown delle conclusioni cliniche.
         """
-        conc = results.get('summary', {}).get('clinical_conclusions', '')
+        conc = results.get('summary', {}).get('clinical_conclusions', '')     
         if not conc:
-            for domain, data in results.get('domain_results', {}).items():
+            for domain, data in results.get('domain_results', {}).items():    
                 dom_conc = data.get('clinical_conclusions')
                 if dom_conc:
                     conc += f"- {dom_conc}\n"
@@ -227,7 +228,7 @@ class OutputGenerator:
         # Applicazioni cliniche
         clinical_path = output_dir / "clinical_applications.md"
         with open(clinical_path, 'w', encoding='utf-8') as f:
-            f.write(self._extract_clinical_applications(results, 'all'))
+            f.write(self._extract_clinical_applications(results, 'all'))      
         output_files['clinical'] = str(clinical_path)
         # (Stub: PDF e altri output possono essere aggiunti qui)
         return output_files
@@ -236,7 +237,7 @@ class OutputGenerator:
         """
         Genera un report scientifico a partire da una memoria markdown simbolica.
         Integra log operazioni, razionali, metriche, benchmark e (opzionale) la roadmap iterativa.
-        Se presenti, integra anche i risultati Google come evidenze esterne.
+        Se presenti, integra anche i risultati Google come evidenze esterne.  
         """
         with open(markdown_file, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -267,4 +268,4 @@ class OutputGenerator:
         if output_file:
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(report))
-        return '\n'.join(report) 
+        return '\n'.join(report)
