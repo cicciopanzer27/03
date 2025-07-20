@@ -1,0 +1,4 @@
+- Iter 0: Traduzione -> lim_{x->0} sin(x)/x = 1
+- Iter 0: Ottimizzazione -> 1 = lim_{x->0} sin(x)/x
+- Iter 0: Ricerca Google (sintesi) -> Google CLI non trovato....
+- Iter 0: Convergenza -> True
