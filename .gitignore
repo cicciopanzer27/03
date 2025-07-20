@@ -1,0 +1,261 @@
+# M.I.A. Consciousness Research System - Git Ignore File
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# M.I.A. Specific
+output/
+logs/
+cache/
+data/vector_db/
+temp/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.log
+
+# Model files and large data
+models/
+*.bin
+*.safetensors
+*.model
+*.gguf
+*.onnx
+
+# Configuration secrets
+config.local.json
+.env.local
+secrets/
+*.key
+*.pem
+
+# Research data
+research_data/
+papers/
+datasets/
+experiments/
+
+# Web scraping cache
+scrapy_cache/
+selenium_cache/
+tor_temp/
+
+# Vector database persistence
+chroma_db/
+faiss_index/
+embeddings_cache/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Testing
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+pytest_cache/
+test-results/
+benchmark.json
+
+# Documentation builds
+docs/_build/
+docs/build/
+site/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+target/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# MCP integration temp files
+mcp_temp/
+mcp_cache/
+
+# A2A workflow temp files
+a2a_workflows/
+agent_logs/
+
+# Performance profiling
+*.prof
+*.stats
+memory_profile.dat
+line_profiler.dat
+
+# Security and sensitive data
+api_keys.json
+credentials.json
+private_keys/
+certificates/
+
+# Development only
+dev_notes.txt
+TODO_personal.md
+scratch/
+experiments/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+tmp/
+temporary/
+*.tmp
+*.temp
+
+# System specific
+desktop.ini
+.directory
+
+# Archive files (unless specifically needed)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Large data files
+large_datasets/
+big_models/
+huge_files/

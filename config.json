@@ -1,4 +1,7 @@
 {
+  "_version": "2.0.0",
+  "_description": "M.I.A. Consciousness Research System - Complete Configuration",
+  
   "models": {
     "mathematical": "llama3.2:3b",
     "physical": "mistral:7b",
@@ -7,6 +10,7 @@
     "critical": "mistral:7b",
     "synthesis": "llama3.2:3b"
   },
+  
   "research_parameters": {
     "confidence_threshold": 0.7,
     "max_iterations": 5,
@@ -14,11 +18,81 @@
     "parallel_processing": false,
     "memory_optimization": true
   },
+  
   "output_settings": {
     "generate_pdf": false,
     "include_raw_data": true,
     "scientific_format": true,
-    "clinical_applications": true
+    "clinical_applications": true,
+    "output_format": "markdown",
+    "include_citations": true,
+    "generate_summary": true
+  },
+  
+  "enhanced_features": {
+    "vector_database": {
+      "enabled": true,
+      "backend": "chromadb",
+      "model_name": "all-MiniLM-L6-v2",
+      "collection_name": "consciousness_research",
+      "persist_directory": "./data/vector_db"
+    },
+    
+    "web_scraping": {
+      "enabled": true,
+      "use_tor": false,
+      "use_selenium": false,
+      "max_pages_per_site": 10,
+      "request_delay": 1.0,
+      "respect_robots_txt": true
+    },
+    
+    "mcp_integration": {
+      "enabled": false,
+      "data_sources": ["arxiv", "pubmed", "scholar", "filesystem"],
+      "connection_timeout": 30,
+      "max_search_results": 50,
+      "auto_retry": true
+    },
+    
+    "a2a_integration": {
+      "enabled": false,
+      "agents": ["math_agent", "neural_agent", "literature_agent", "critical_agent", "synthesis_agent"],
+      "workflow_timeout": 300,
+      "parallel_execution": true,
+      "agent_endpoints": {
+        "math_agent": "http://localhost:8001/math",
+        "neural_agent": "http://localhost:8002/neural",
+        "literature_agent": "http://localhost:8003/literature",
+        "critical_agent": "http://localhost:8004/critical",
+        "synthesis_agent": "http://localhost:8005/synthesis"
+      }
+    }
+  },
+  
+  "system_settings": {
+    "log_level": "INFO",
+    "log_file": "logs/mia_system.log",
+    "cache_directory": "./cache",
+    "data_directory": "./data",
+    "output_directory": "./output",
+    "temp_directory": "./temp"
+  },
+  
+  "ollama_settings": {
+    "base_url": "http://localhost:11434",
+    "timeout": 120,
+    "temperature": 0.7,
+    "num_ctx": 4096,
+    "repeat_penalty": 1.1
+  },
+  
+  "performance_tuning": {
+    "max_concurrent_requests": 3,
+    "request_retry_attempts": 3,
+    "memory_limit_mb": 8192,
+    "enable_caching": true,
+    "cache_ttl_hours": 24
   }
 }
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 M.I.A. Consciousness Research System - PC Optimized Version
 Main entry point for rigorous consciousness research
@@ -10,6 +11,15 @@ multiple Ollama models with scientific rigor and critical analysis.
 import os
 import sys
 import json
+
+# Imposta encoding UTF-8 per Windows
+if os.name == 'nt':  # Windows
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except AttributeError:
+        # Versioni Python più vecchie
+        pass
 import time
 import logging
 import argparse
